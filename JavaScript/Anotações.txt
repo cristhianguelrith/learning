@@ -1,0 +1,437 @@
+
+======================================================={Aula 5}=======================================================
+
+Como fazer um COMENTÁRIO no JavaScript?
+
+// isto é um comentário que comporta APENAS UMA linha.
+
+/* isto é um comentário
+que comporta
+VÁRIAS linhas. */
+
+--------------------------------------------------------------------------------------------------------------
+
+O que é uma VARIÁVEL?
+É um ESPAÇO VAGO, dedicado dentro da memória do computador, que permite você ARMAZENAR DADOS.
+
+Estrutura da variável:
+var identificador = valor
+
+var - serve para DECLARAR uma VARIÁVEL de **ESCOPO GLOBAL.
+**No final deste comentário explico a diferença entre:  var,  let  e  const  .
+**Junto desta explicação ^ explico também que é ESCOPO.
+
+--------------------------------------------------------------------------------------------------------------
+
+-------Identificador - serve para você DAR um NOME à uma VARIÁVEL.
+Regras para a criação deste nome:
+
+Este pode começar com:----letra, $ ou _
+Não pode começar com:-----números
+É possível usar:----------letras ou números
+É possível usar:----------acentos e símbolos
+Não pode conter:----------espaços (usa-se o underline para isso)
+Não podem ser:------------*palavras reservadas
+*Palavras reservadas são palavras que já têm uma função atribuída dentro do JavaScript. Ex: function, alert, var
+
+Dicas:
+Letras MAIúsculas e MINúsculas FAZEM DIFERENÇA (case-sensitive).
+Escolher nomes COERENTES auxiliam na COMPREENSÃO do PROPÓSITO de cada variável.
+
+--------------------------------------------------------------------------------------------------------------
+
+valor - serve para você definir um *CONTEÚDO para uma variável.
+*O VALOR de uma variável pode COMPORTAR diferentes TIPOS de DADOS.
+
+TIPOS de DADOS ou TIPOS PRIMITIVOS:
+*O operador  typeof  permite você saber o TIPO de DADO de uma VARIÁVEL.
+
+Inteiro: números inteiros, ou seja, sem casas decimais.
+ex: 5, -8, 214, 0
+
+real: números reais, ou seja, com casas decimais.
+ex: 0.1, -3.1415, 1.6180, 50.0
+
+number: o JavaScript não diferenciará dados do tipo INTEIRO e REAL. Então, a princípio, ambos serão tratados como NUMBER, ou seja, número.
+
+string: texto ou caractere, ou seja, cadeia de caracteres.
+ex: "oi", "arroz", "pindamonhangaba", "666"
+
+boolean: lógico, 0 ou 1, ou seja, com valor VERDADEIRO ou FALSO.
+
+Diferença entre:  undefined  e  null
+
+undefined: INDICA/DEFINE que uma VARIÁVEL NÃO RECEBEU VALOR ALGUM ou NEM SEQUER foi DECLARADA. Ex:
+var car                                             // declarou-se: var car
+console.log(car)                            // valor undefined
+console.log(typeof car)               // tipo undefined
+console.log(car + 5)                     // NaN (Not a Number)
+console.log(typeof y)                   // undefined (y não foi declarado)
+console.log(car === undefined) // true (valor e tipo igual)
+
+null: é uma ATRIBUIÇÃO de VALOR *NULO*. INDICA/DEFINE INTENCIONALMENTE a AUSÊNCIA de VALOR em uma VARIÁVEL.
+var car = null                       // declarou-se: var car; atribuiu-se o valor: null
+console.log(car)                // valor null
+console.log(typeof car)    // tipo object
+console.log(car + 5)         // 5
+console.log(typeof y)       // undefined (y não foi declarado)
+console.log(car === null) // true (valor e tipo igual)
+
+undefined  e  null  têm VALOR IGUAL (ambos não tem valor):
+console.log(undefined == null)   // true
+Mas TIPO DIFERENTE (um é: undefined; e o outro: object):
+console.log(undefined === null) // false
+
+undefined: o VALOR NÃO EXISTE ou a VARIÁVEL NÃO EXISTE.
+null: a VARIÁVEL EXISTE e seu VALOR foi DEFINIDO INTENCIONALMENTE como: SEM VALOR.
+
+OUTRA COISA: quando LIMPAMOS o VALOR de uma VARIÁVEL do tipo STRING, ela fica com o VALOR VAZIO (empty value). E isto NADA tem a ver com  undefined  ou  null  . Ex:
+var nome = "rodolfo"
+var nome = " "                       // isto é: valor vazio
+console.log(nome)             // valor " "
+console.log(typeof nome) // tipo string
+
+--------------------------------------------------------------------------------------------------------------
+
+  O VALOR de uma VARIÁVEL pode ser CIRCUNDADO por 3 tipos de aspas diferentes:
+var s1 = "JavaScript"         (aspas duplas)
+var s2 = 'Curso em Vídeo' (aspas simples ou apóstrofo)
+var s3 = `Guanabara`        (crase (Template Literals))
+
+  Símbolos de =, == e ===:
+=     significa: símbolo de ATRIBUIÇÃO.
+==   significa: símbolo de VALOR IGUAL.
+=== significa: símbolo de TIPO e VALOR IGUAL.
+
+  O que é escopo?
+Escopo é a região onde uma determinável variável irá funcionar. Esta pode ser GLOBAL ou LOCAL.
+
+--------------------------------------------------------------------------------------------------------------
+
+  Qual a diferença entre: var, let e const?
+
+  var:
+Cria uma variável de ESCOPO GLOBAL. Ou seja, esta variável funciona em QUALQUER parte do programa, sendo reconhecida GLOBALMENTE.
+Uma variável  var  PODE ser REDECLARADA.
+Uma variável  var  PODE ter seu VALOR REATRIBUÍDO.
+
+  let:
+Cria uma variável de ESCOPO LOCAL. Ou seja, esta variável funciona APENAS dentro do BLOCO em que ela está declarada, sendo reconhecida LOCALMENTE.
+Uma variável  let  NÃO PODE ser REDECLARADA.
+Uma variável  let  PODE ter o seu VALOR REATRIBUÍDO.
+
+  const:
+Cria uma variável de escopo LOCAL. Ou seja, esta variável funciona APENAS dentro do BLOCO em que ela está declarada, sendo reconhecida LOCALMENTE.
+Uma variável  const  NÃO PODE ser REDECLARADA.
+Uma variável  const  NÃO PODE ter seu VALOR REATRIBUÍDO.
+
+--------------------------------------------------------------------------------------------------------------
+
+    Detalhes:
+
+  O que é REDECLARAR?
+Primeiro, declarar é quando você utiliza as palavras-chaves:  var,  let,  ou  const  para CRIAR uma VARIÁVEL. Portanto, REDECLARAR seria DECLARAR 2x a MESMA VARIÁVEL (mesma palavra-chave e mesmo identificador). Ex:
+1 var pessoa = "joão"
+2 console.log(pessoa)
+3 var pessoa = "rodolfo"
+4 console.log(pessoa)
+
+linha 3: REDECLAROU-SE a variável  var pessoa;
+
+Neste mesmo exemplo, substituindo ambos  var (linha 1 e 3)  por:  let  ou  const  , o retorno será:
+SyntaxError: Identifier 'pessoa' has already been declared
+
+Isto acontece pois  let  e  const  são variáveis que NÃO PODEM ser REDECLARADAS.
+
+  O que é REATRIBUIR?
+Enquanto DECLARAR refere-se à CRIAÇÃO de uma VARIÁVEL, ATRIBUIR refere-se à ATRIBUIÇÃO de um VALOR à uma VARIÁVEL. Portanto, REATRIBUIR seria ATRIBUIR um VALOR à uma VARIÁVEL que JÁ TEM um VALOR ATRIBUÍDO.  Por exemplo, no exemplo anterior:
+linha 1 e 3: REATRIBUIU-SE o valor da variável  var pessoa  de "joão" para "rodolfo"
+
+var  e  let  podem ter os seus valores REATRIBUÍDOS normalmente, mas  const  não.
+Porém isso não significa que o VALOR de uma CONSTANTE não possa ser MODIFICADO.
+
+  O que é quero dizer com: REATRIBUIR e MODIFICAR
+Reatribuir: atribuí-se um valor PRIMÁRIO e, posteriormente, REATRIBUÍ-SE para um outro valor SECUNDÁRIO. Então existe um ANTES e um DEPOIS. Existe um momento em que o valor PRIMÁRIO estava valendo e, posteriormente, o valor SECUNDÁRIO passou a valer (no exemplo do  var  , além da variável ser REDECLARADA, ela teve seu VALOR REATRIBUÍDO de "joão" para "rodolfo").
+
+Modificar: atribuí-se um valor PRIMÁRIO e, posteriormente, MODIFICA-SE na RAIZ, na própria CONSTANTE, para algum OUTRO VALOR. Então não é uma REATRIBUIÇÃO. Não existe um ANTES e DEPOIS. O valor é apenas MODIFICADO. É como se o valor que estava antes nunca tivesse existido. (portanto, uma variável  const  NÃO PODE nem ser REDECLARADA nem ter seu VALOR REATRIBUÍDO. Mas PODE ser MODIFICADA.)
+
+======================================================={Aula 6}=======================================================
+
+Como fazer COMENTÁRIOS em:
+  JavaScript:
+// isto é um comentário em JS que comporta APENAS UMA linha.
+
+/* isto é um comentário
+em JS que comporta
+VÁRIAS linhas. */
+
+  HTML5:
+<!-- isto é um comentário em HTML5. -->
+
+  CSS3:
+/* isto é um comentário em CSS3. */
+
+--------------------------------------------------------------------------------------------------------------
+
+    O que é CONCATENAÇÃO?
+Concatenar significa: conexão entre, colocar junto.
+
+Este ato de COMBINAR OBJETOS STRING dentro de uma EXPRESSÃO chama-se CONCATENAÇÃO. O operador para CONCATENAR é o sinal de mais (+). Aos 10:18 de vídeo ele inseriu a VARIÁVEL STRING  nome  logo APÓS ao VALOR STRING do método alert(), juntando-os com o operador (+). Ilustração:
+window.alert('É um grande prazer em te conhecer, ' + nome)
+Ou seja:
+window.alert('VALOR STRING' + VARIÁVEL STRING)
+
+  PONTOS IMPORTANTES:
+caso faça: (number + string), o JavaScript tratará o  number  como uma  string  . Ex:
+let x = 16 + "Volvo"
+x valerá: "16Volvo"
+
+O JavaScript AVALIA as EXPRESSÕES da ESQUERDA para DIREITA. Portanto, SEQUÊNCIAS DIFERENTES resultarão em RESULTADOS DIFERENTES. Ex:
+let x = 16 + 4 + "Volvo"
+x valerá: "20Volvo"
+Ou seja, SOMOU-SE os NUMBERS 16 e 4 e o resultado foi CONCATENADO com a STRING "Volvo".
+(number + number) + string
+number + string
+string
+
+let x = "Volvo" + 16 + 4
+x valerá: "Volvo164"
+Ou seja, CONCATENOU-SE "Volvo" com 16 e o resultado foi CONCATENADO com o 4.
+(string + number) + number
+string + number
+string
+
+--------------------------------------------------------------------------------------------------------------
+
+  Como fazer CONVERSÕES de TIPO de DADO:
+O método window.prompt() retorna, por padrão, um valor do tipo STRING. Então, para fazer a soma 2 NUMBERS, é necessário converter o dado padrão de STRING para NUMBER nos 2 métodos.
+
+Relembrando:
+(string + string) o sinal de (+) fará: concatenação
+(string + number) o sinal de (+) fará: concatenação
+(number + number) o sinal de (+) fará: adição
+
+O método parseInt() VERIFICA um valor STRING e retorna um valor INTEIRO.
+
+O método parseFloat() VERIFICA um valor STRING e retorna um valor REAL (Floating Point Number).
+
+O método Number() CONVERTE um valor STRING para um valor NUMBER.
+
+O método String() CONVERTE um valor NUMBER para um valor STRING.
+
+--------------------------------------------------------------------------------------------------------------
+
+      Template Literals (Modelo Literal)
+
+É quando você circunda ELEMENTOS utilizando CRASES  ` `  ao invés de aspas simples  ' '  ou duplas  " ".
+  Características:
+-Dispõem os caracteres de maneira LITERAL, ou seja, quebras de linha (enter) e espaços (SpaceBar) serão CONSIDERADOS;
+-Permite o uso de placeholders, que são expressões delimitadas por um cifrão e 2 chaves. Syntax: ${expressão};
+-Os placeholders permitem a INTERPOLAÇÃO de STRINGS.
+
+    CONCATENAÇÃO vs INTERPOLAÇÃO:
+
+  Variáveis para exemplo:
+var nome  = "Shaolin"
+var apelido = "Matador de Porco"
+var idade = 66
+
+    Concatenação:
+maneira antiga, usa-se aspas simples ' ' ou duplas " ";
++difícil de ler e escrever;
++complexo de escrever em linhas diferentes (precisa usar o Escape Character: \n);
++complicado de pôr aspas dentro da string (gera conflito. Precisa usar o Escape Character: \").
+
+  Escrita do código:
+console.log("Seu nome é " + nome + ", mais conhecido como \"" + nome + " " + apelido + "\"." + 
+"\nHoje ele tem " + idade + " anos de idade.")
+
+  Resultado:
+Seu nome é Shaolin, mais conhecido como "Shaolin Matador de Porco".
+Hoje ele tem 66 anos de idade.
+
+vs
+
+    Interpolação:
+maneira nova, usa-se crases ` `;
++fácil de ler e escrever;
++simples de escrever em linhas diferentes (basta apertar enter);
++simples de pôr aspas dentro da string (basta colocá-las onde quiser).
+
+  Escrita do código:
+console.log(`Seu nome é ${nome}, mais conhecido como "${nome} ${apelido}".
+Hoje ele tem ${idade} anos de idade.`)
+
+  Resultado (igual ao da concatenação):
+Seu nome é Shaolin, mais conhecido como "Shaolin Matador de Porco".
+Hoje ele tem 66 anos de idade.
+
+--------------------------------------------------------------------------------------------------------------
+
+A propriedade string.length retorna a QUANTIDADE de CARACTERES de uma STRING (incluindo os espaços).
+
+O método string.toUpperCase() CONVERTE uma STRING em LETRAS MAIÚSCULAS.
+
+O método string.toLowerCase() CONVERTE uma STRING em LETRAS MINÚSCULAS.
+
+O método document.write() permite você ESCREVER na SAÍDA HTML.
+*Para escrever e pular uma linha basta colocar  ln  no final do comando, assim: document.writeln()
+
+A tag <br> serve para quebrar uma linha, pular uma linha.
+*Esta tag não tem fechamento.
+
+--------------------------------------------------------------------------------------------------------------
+
+O método number.toFixed() serve para FIXAR um NÚMERO ESPECÍFICO de CASAS DECIMAIS de um NUMBER.
+*O parâmetro a ser colocado dentro dos () é o número de casas decimais.
+
+O método string.replace() serve para VERIFICAR uma STRING, ou EXPRESSÃO, para SUBSTITUIR um VALOR ESPECÍFICO. O método retorna uma NOVA STRING, ou EXPRESSÃO, com o valor SUBSTITUÍDO.
+*A estrutura dos PARÂMETROS a serem colocados dentro dos () é, substituir: ('este', 'por este')
+*Este método NÃO MODICA a STRING ORIGINAL.
+
+O método toLocaleString() RETORNA um NÚMERO como uma STRING, utilizando um FORMATO de LINGUAGEM *LOCAL.
+*Caso não utilize parâmetro algum, o valor RETORNADO estará no FORMATO de LINGUAGEM do SEU DISPOSITIVO. Para mudar isto, usa-se o parâmetro  locales  para especificar algum outro formato.
+  Syntax: number.toLocaleString(locales, options)
+locales = formato de linguagem (pt-BR, en-US, ja-JP, etc..)
+options = este OBJETO pode ter DIVERSAS outras PROPRIEDADES. Para saber mais, Google: "Number toLocaleString JavaScript w3schools"
+  Ex da aula:
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+
+
+======================================================={Aula 7}=======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
