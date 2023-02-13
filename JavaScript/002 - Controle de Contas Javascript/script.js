@@ -100,36 +100,3 @@ form.addEventListener('submit', event => {
     inputTransactionAmount.value = ''
     inputTransactionName.value = ''
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
