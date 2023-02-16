@@ -1,50 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>training001</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            margin-top: 250px;
-        }
-        div#area {
-            font: normal 20pt arial;
-            background-color: green;
-            color: white;
-            width: 200px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-    </style>
+    <title>Relógio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="area" onclick="clicar()" onmouseout="saiu()" onmouseenter="entrou()">
-        Interaja...
-    </div>
-    <script>
-        var a = window.document.querySelector('#area')
-        
-        function entrou() {
-            a.innerText = "Clique";
-            a.style.background = 'blue';
-        }
-        
-        function clicar() {
-            a.innerText = "Clicou"
-            a.style.background = 'purple';
-        }
+<body onload="carregar()">
+    <header class="title">
+        <h1>Hora do Dia!</h1>
+    </header>
+    
+    <section class="conteiner">
+        <div id="time_of_day"></div>
 
-        function saiu() {
-            a.innerText = "Interaja..."
-            a.style.background = 'green';
-        }
-    </script>
+        <div>
+            <img src="/archives/null.png" id="photo" class="photo" alt="" srcset="">
+        </div>
+        
+        <div id="mode_of_day"></div>
+    </section>
+    
+    <footer class="copy">
+        Cristhian Guelrith Grangeiro de Sousa
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
