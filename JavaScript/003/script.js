@@ -12,25 +12,25 @@ function carregar() {
         // Legibilizando o dia da semana
     switch(diasem) {
         case 0:
-            datareal = 'Domingo'
-            break
-        case 1:
             datareal = 'Segunda-Feira'
             break
-        case 2:
+        case 1:
             datareal = 'Terça-Feira'
             break
-        case 3:
+        case 2:
             datareal = 'Quarta-Feira'
             break
-        case 4:
+        case 3:
             datareal = 'Quinta-Feira'
             break
-        case 5:
+        case 4:
             datareal = 'Sexta-Feira'
             break
-        case 6:
+        case 5:
             datareal = 'Sábado'
+            break
+        case 6:
+            datareal = 'Domingo'
             break
         default:
             datareal = 'Não sei...'
