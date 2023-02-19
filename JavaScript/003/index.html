@@ -4,26 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relógio</title>
+    <title>Tabuada</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="carregar()">
+<body>
     <header class="title">
-        <h1>Hora do Dia!</h1>
+        <h1>Tabuada!</h1>
     </header>
     
     <section class="conteiner">
-        <div id="time_of_day"></div>
-
+    
         <div>
-            <img src="/archives/null.png" id="photo" class="photo" alt="" srcset="">
+            <h2 class="insertNumberText conteinerElement">Insira um Número</h2>
+            <input type="number" id="numberInput" class="numberInput conteinerElement">
+        <div>
+
+        <div class="allTableResults conteinerElement">
+            <div id="plusResultTable" class="tableResult plusResultTable">
+                <p>1 * 1 = 2</p>
+                <p>2 * 1 = 2</p>
+                <p>3 * 1 = 2</p>
+                <p>4 * 1 = 2</p>
+                <p>5 * 1 = 2</p>
+                <p>6 * 1 = 2</p>
+                <p>7 * 1 = 2</p>
+                <p>8 * 1 = 2</p>
+                <p>9 * 1 = 2</p>
+                <p>10 * 10 = 100</p>
+            </div>
+            <div id="minusResultTable" class="tableResult minusResultTable">
+                <p>1 * 1 = 2</p>
+                <p>2 * 1 = 2</p>
+                <p>3 * 1 = 2</p>
+                <p>4 * 1 = 2</p>
+                <p>5 * 1 = 2</p>
+                <p>6 * 1 = 2</p>
+                <p>7 * 1 = 2</p>
+                <p>8 * 1 = 2</p>
+                <p>9 * 1 = 2</p>
+                <p>10 * 10 = 100</p>
+            </div>
+            <div id="multiplyResultTable" class="tableResult multiplyResultTable">
+                <p>1 * 1 = 2</p>
+                <p>2 * 1 = 2</p>
+                <p>3 * 1 = 2</p>
+                <p>4 * 1 = 2</p>
+                <p>5 * 1 = 2</p>
+                <p>6 * 1 = 2</p>
+                <p>7 * 1 = 2</p>
+                <p>8 * 1 = 2</p>
+                <p>9 * 1 = 2</p>
+                <p>10 * 10 = 100</p>
+            </div>
+            <div id="divideResultTable" class="tableResult divideResultTable">
+                <p>1 * 1 = 2</p>
+                <p>2 * 1 = 2</p>
+                <p>3 * 1 = 2</p>
+                <p>4 * 1 = 2</p>
+                <p>5 * 1 = 2</p>
+                <p>6 * 1 = 2</p>
+                <p>7 * 1 = 2</p>
+                <p>8 * 1 = 2</p>
+                <p>9 * 1 = 2</p>
+                <p>10 * 10 = 100</p>
+            </div>
         </div>
-        
-        <div id="mode_of_day"></div>
+    
     </section>
     
     <footer class="copy">
-        Cristhian Guelrith Grangeiro de Sousa
+        @Cristhian_Guelrith_Grangeiro_de_Sousa
     </footer>
     
     <script src="script.js"></script>

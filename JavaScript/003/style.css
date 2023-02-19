@@ -16,28 +16,41 @@ body {
 .conteiner {
     background-color: white;
     width: 700px;
-    height: 550px;
+    min-height: 550px;
     margin: auto;
     box-shadow: 3px 3px 10px 0px rgba(36, 1, 44, 0.295);
     padding: 15px;
 }
 
-#time_of_day {
+.conteinerElement {
     margin: 15px 0px;
-    font: 400 30pt Montserrat;
-    color: rgb(187, 85, 255);
 }
 
-#mode_of_day {
-    margin: 15px 0px;
-    font: 600 15pt Montserrat;
-    color: rgb(187, 85, 255);
+.insertNumberText {
+    font: normal 25pt Montserrat;
 }
 
-.photo {
-    width: 550px;
-    overflow: hidden;
-    margin: 17px 0px;
+.numberInput {
+    font: normal 25pt Montserrat;
+    text-align: center;
+    width: 400px;
+    border-radius: 50px;
+    border: 2px solid black;
+    outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.allTableResults {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.tableResult {
+    font: 400 17pt Montserrat;
 }
 
 .copy {
