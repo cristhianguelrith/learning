@@ -11,15 +11,18 @@ body {
 .title > h1 {
     font: 600 40pt Montserrat;
     color: white;
+    margin: 0px;
 }
 
 .conteiner {
     background-color: white;
-    width: 700px;
-    min-height: 550px;
+    min-width: 700px;
+    min-height: 0px;
     margin: auto;
     box-shadow: 3px 3px 10px 0px rgba(36, 1, 44, 0.295);
     padding: 15px;
+    display: inline-block;
+    border-radius: 20px;
 }
 
 .conteinerElement {
@@ -43,14 +46,41 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+.buttonInput {
+    font: normal 13pt Montserrat;
+    color: white;
+    background-color: rgb(187, 85, 255);
+    border: none;
+    padding: 5px 30px;
+    border-radius: 16px;
+}
+
+.buttonInput:hover {
+    background-color: rgb(123, 28, 187);
+    cursor:pointer;
+}
+
+.buttonInput:active {
+    background-color: white;
+    color: black;
+}
+
 .allTableResults {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .tableResult {
     font: 400 17pt Montserrat;
+    margin: 0px 30px;
+}
+
+
+
+span {
+    color: rgb(123, 28, 187);
+    font: 600 17pt Montserrat ;
 }
 
 .copy {
